@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\UserRolesType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -45,7 +46,14 @@ class UserFactory extends Factory
     public function getAdmin(): UserFactory
     {
         return $this->afterCreating(fn ($user) => [
-            $user->assignRole('admin')
+            $user->assignRole(UserRolesType::Admin)
+        ]);
+    }
+
+    public function getTechnicianRole(): UserFactory
+    {
+        return $this->afterCreating(fn ($user) => [
+            $user->assignRole(UserRolesType::Technician)
         ]);
     }
 }
