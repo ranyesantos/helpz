@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $role = Role::create(['name' => 'admin']);
+        Role::create(['name' => 'technician']);
         $role->givePermissionTo(Permission::all());
 
         User::factory()
@@ -34,6 +35,14 @@ class DatabaseSeeder extends Seeder
             ->create([
                 'name' => 'user',
                 'email' => 'user@user.com',
+                'password' => 'password'
+            ]);
+
+        User::factory()
+            ->getTechnicianRole()
+            ->create([
+                'name' => 'technician',
+                'email' => 'technician@technician.com',
                 'password' => 'password'
             ]);
 
