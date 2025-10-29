@@ -13,8 +13,8 @@ use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Livewire\livewire;
 use function PHPUnit\Framework\assertTrue;
 
-describe ('user creating', function() {
-    it('should be able to create a service request as common user', function (): void {
+describe ('service request creation', function() {
+    it('works correctly when a common user is creating', function (): void {
         $user = User::factory()->create();
         $device = Device::factory()->create();
         $input = [
@@ -37,7 +37,7 @@ describe ('user creating', function() {
         assertDatabaseHas(ServiceRequest::class,$input);
     });
     
-    it('should be able to create a service request as admin user', function (): void {
+    it('works correctly when a admin is creating', function (): void {
         Role::create(['name' => 'admin']);
         $admin = User::factory()->create()->assignRole('admin');
         $device = Device::factory()->create();

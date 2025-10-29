@@ -20,7 +20,7 @@ class DevicePolicy
      */
     public function view(User $user, Device $device): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -44,7 +44,7 @@ class DevicePolicy
      */
     public function delete(User $user, Device $device): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**

@@ -40,7 +40,7 @@ test('user can only see their own service requests', function (): void {
         ->assertCanRenderTableColumn('status');
 });
 
-it('can search by service request title', function(): void {
+test('can search by service request title', function(): void {
     livewire(ListServiceRequests::class)
         ->assertOk()
         ->searchTable($this->userServiceRequests->first()->title)
@@ -48,7 +48,7 @@ it('can search by service request title', function(): void {
         ->assertCanNotSeeTableRecords($this->userServiceRequests->where(['title', '!=', $this->userServiceRequests->first()->title]));
 });
 
-it('can search service requests by user\'s name column', function(): void {
+test('can search service requests by user\'s name column', function(): void {
     livewire(ListServiceRequests::class)
         ->assertOk()
         ->searchTable($this->userServiceRequests->first()->user->name)
@@ -56,7 +56,7 @@ it('can search service requests by user\'s name column', function(): void {
         ->assertCanNotSeeTableRecords($this->userServiceRequests->where(['user.name', '!=', $this->userServiceRequests->first()->user->name]));
 });
 
-it('can search by device\'s serial number column', function(): void {
+test('can search by device\'s serial number column', function(): void {
     livewire(ListServiceRequests::class)
         ->assertOk()
         ->searchTable($this->userServiceRequests->first()->device->serial_number)
@@ -64,7 +64,7 @@ it('can search by device\'s serial number column', function(): void {
         ->assertCanNotSeeTableRecords($this->userServiceRequests->where(['device.serial_number', '!=', $this->userServiceRequests->first()->device->serial_number]));
 });
 
-it('can delete service requests', function(): void {
+test('can delete service requests', function(): void {
     $serviceRequests = $this->userServiceRequests;
     livewire(ListServiceRequests::class)
         ->assertCanSeeTableRecords($serviceRequests)
