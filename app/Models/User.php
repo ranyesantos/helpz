@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\UserRolesType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -40,9 +40,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function isAdmin()
+    /**
+     * @method bool isAdmin()
+     */
+    public function isAdmin(): bool
     {
-        return $this->hasRole('admin');
+        return $this->hasRole(UserRolesType::Admin);
     }
 
     /**

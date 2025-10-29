@@ -14,10 +14,10 @@ class DevicesTable
     {
         return $table
             ->columns([
-                TextColumn::make('model'),
-                TextColumn::make('brand'),
-                TextColumn::make('device_code'),
-                TextColumn::make('serial_number'),
+                TextColumn::make('model')->searchable(),
+                TextColumn::make('brand')->searchable(),
+                TextColumn::make('device_code')->searchable(),
+                TextColumn::make('serial_number')->searchable(),
             ])
             ->filters([
                 //

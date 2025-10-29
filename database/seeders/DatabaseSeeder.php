@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserRolesType;
 use App\Models\Device;
 use App\Models\ServiceRequest;
 use App\Models\User;
 use Database\Factories\DeviceFactory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $role = Role::create(['name' => 'admin']);
+        $role = Role::create(['name' => UserRolesType::Admin]);
         $role->givePermissionTo(Permission::all());
+        Role::create(['name' => UserRolesType::Technician]);
 
         User::factory()
             ->getAdmin()
@@ -34,6 +35,14 @@ class DatabaseSeeder extends Seeder
             ->create([
                 'name' => 'user',
                 'email' => 'user@user.com',
+                'password' => 'password'
+            ]);
+
+        User::factory()
+            ->getTechnicianRole()
+            ->create([
+                'name' => 'technician',
+                'email' => 'technician@technician.com',
                 'password' => 'password'
             ]);
 
