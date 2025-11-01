@@ -10,7 +10,9 @@ class DeviceServiceProvider extends ServiceProvider
 {
 	public function register(): void
     {
-        Panel::configureUsing(fn (Panel $panel) => ($panel->getId() !== 'admin') || $panel->plugin(new DevicePanelPlugin()));
+        Panel::configureUsing(fn (Panel $panel) =>
+			($panel->getId() !== 'admin') || $panel->plugin(new DevicePanelPlugin())
+		);
     }
 	
 	public function boot(): void

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\ServiceRequests\Tables;
+namespace Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Tables;
 
 use App\Enums\ServiceRequestStatusType;
 use App\Models\User;

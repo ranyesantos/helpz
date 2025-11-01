@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\ServiceRequests\Pages;
+namespace Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages;
 
-use App\Filament\Resources\ServiceRequests\ServiceRequestResource;
 use Filament\Resources\Pages\CreateRecord;
+use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\ServiceRequestResource;
 
 class CreateServiceRequest extends CreateRecord
 {

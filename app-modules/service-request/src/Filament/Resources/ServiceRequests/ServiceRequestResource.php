@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Filament\Resources\ServiceRequests;
+namespace Helpz\ServiceRequest\Filament\Resources\ServiceRequests;
 
-use App\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
-use App\Filament\Resources\ServiceRequests\Pages\EditServiceRequest;
-use App\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
-use App\Filament\Resources\ServiceRequests\Schemas\ServiceRequestForm;
-use App\Filament\Resources\ServiceRequests\Tables\ServiceRequestsTable;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use Helpz\ServiceRequest\Models\ServiceRequest;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
+use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
+use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages\EditServiceRequest;
+use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
+use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Schemas\ServiceRequestForm;
+use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Tables\ServiceRequestsTable;
+use Helpz\ServiceRequest\Models\ServiceRequest;
 
 class ServiceRequestResource extends Resource
 {

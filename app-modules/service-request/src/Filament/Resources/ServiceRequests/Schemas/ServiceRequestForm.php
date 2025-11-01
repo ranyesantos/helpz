@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\ServiceRequests\Schemas;
+namespace Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Schemas;
 
 use App\Enums\ServiceRequestStatusType;
 use App\Models\User;
