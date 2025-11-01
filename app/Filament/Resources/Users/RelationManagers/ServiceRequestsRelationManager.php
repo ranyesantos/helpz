@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Users\RelationManagers;
 
-use App\Enums\ServiceRequestStatusType;
 use Filament\Actions\AssociateAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\CreateAction;
@@ -20,6 +19,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
 
 class ServiceRequestsRelationManager extends RelationManager
 {

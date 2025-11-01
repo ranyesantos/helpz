@@ -1,15 +1,15 @@
 <?php
 
-namespace Database\Factories;
+namespace Helpz\ServiceRequest\Database\Factories;
 
-use App\Models\ServiceRequest;
 use App\Models\User;
 use Helpz\Device\Models\Device;
+use Helpz\ServiceRequest\Models\ServiceRequest;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Collection;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ServiceRequest>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Helpz\ServiceRequest\Models\ServiceRequest>
  */
 class ServiceRequestFactory extends Factory
 {
@@ -18,6 +18,7 @@ class ServiceRequestFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected $model = ServiceRequest::class;
     public function definition(): array
     {
         return [

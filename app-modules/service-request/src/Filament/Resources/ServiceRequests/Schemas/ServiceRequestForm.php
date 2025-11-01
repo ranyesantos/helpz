@@ -1,9 +1,7 @@
 <?php
 
-namespace App\Filament\Resources\ServiceRequests\Schemas;
+namespace Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Schemas;
 
-use App\Enums\ServiceRequestStatusType;
-use App\Models\User;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -11,6 +9,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Schema;
 use Helpz\Device\Models\Device;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
 use Illuminate\Support\Facades\Auth;
 
 class ServiceRequestForm
