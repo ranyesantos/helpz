@@ -2,11 +2,11 @@
 
 namespace Helpz\ServiceRequest\Models;
 
-use App\Enums\ServiceRequestStatusType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Helpz\Device\Models\Device;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ServiceRequest extends Model

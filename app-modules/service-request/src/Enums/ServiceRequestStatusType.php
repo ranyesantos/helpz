@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums;
+namespace Helpz\ServiceRequest\Enums;
 
 use Filament\Support\Colors\Color;
 use Filament\Support\Contracts\HasColor;
