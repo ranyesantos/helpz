@@ -1,12 +1,10 @@
 <?php
 
-use App\Enums\ServiceRequestStatusType;
-use App\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
-use App\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
 use App\Models\User;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\Testing\TestAction;
+use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
 use Spatie\Permission\Models\Role;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 
