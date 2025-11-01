@@ -1,0 +1,24 @@
+{
+	"name": "helpz/device",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Helpz\\Device\\": "src/",
+			"Helpz\\Device\\Tests\\": "tests/",
+			"Helpz\\Device\\Database\\Factories\\": "database/factories/",
+			"Helpz\\Device\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Helpz\\Device\\Providers\\DeviceServiceProvider"
+			]
+		}
+	}
+}

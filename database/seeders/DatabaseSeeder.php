@@ -3,11 +3,9 @@
 namespace Database\Seeders;
 
 use App\Enums\UserRolesType;
-use App\Models\Device;
 use App\Models\ServiceRequest;
 use App\Models\User;
-use Database\Factories\DeviceFactory;
-use Illuminate\Database\Eloquent\Collection;
+use Helpz\Device\Models\Device;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;

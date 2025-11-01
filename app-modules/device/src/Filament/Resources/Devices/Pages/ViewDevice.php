@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Devices\Pages;
+namespace Helpz\Device\Filament\Resources\Devices\Pages;
 
-use App\Filament\Resources\Devices\DeviceResource;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
+use Helpz\Device\Filament\Resources\Devices\DeviceResource;
 
 class ViewDevice extends ViewRecord
 {

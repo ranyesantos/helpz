@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Policies;
+namespace Helpz\Device\Policies;
 
-use App\Models\Device;
 use App\Models\User;
+use Helpz\Device\Models\Device;
 
 class DevicePolicy
 {
