@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use App\Enums\UserRolesType;
+use Helpz\ServiceRequest\Models\ServiceRequest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\ServiceRequest;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable

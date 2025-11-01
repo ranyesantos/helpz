@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Helpz\ServiceRequest\Models;
 
 use App\Enums\ServiceRequestStatusType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Helpz\Device\Models\Device;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class ServiceRequest extends Model
 {

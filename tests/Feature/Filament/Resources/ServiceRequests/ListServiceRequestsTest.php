@@ -3,12 +3,12 @@
 use App\Enums\ServiceRequestStatusType;
 use App\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
 use App\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
-use App\Models\ServiceRequest;
 use App\Models\User;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\Testing\TestAction;
 use Spatie\Permission\Models\Role;
+use Helpz\ServiceRequest\Models\ServiceRequest;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertDatabaseCount;

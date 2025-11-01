@@ -2,10 +2,10 @@
 
 use App\Enums\ServiceRequestStatusType;
 use App\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
-use App\Models\ServiceRequest;
+use Spatie\Permission\Models\Role;
 use App\Models\User;
 use Helpz\Device\Models\Device;
-use Spatie\Permission\Models\Role;
+use Helpz\ServiceRequest\Models\ServiceRequest;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertDatabaseCount;

@@ -7,12 +7,12 @@ use App\Filament\Resources\ServiceRequests\Pages\EditServiceRequest;
 use App\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
 use App\Filament\Resources\ServiceRequests\Schemas\ServiceRequestForm;
 use App\Filament\Resources\ServiceRequests\Tables\ServiceRequestsTable;
-use App\Models\ServiceRequest;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Helpz\ServiceRequest\Models\ServiceRequest;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 

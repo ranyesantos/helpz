@@ -1,8 +1,8 @@
 <?php
 
-namespace Helpz\ServiceRequest\Tests;
+// namespace Helpz\ServiceRequest\Tests;
 
-class ServiceRequestServiceProviderTest extends TestCase
-{
-	// TODO
-}
+// class ServiceRequestServiceProviderTest extends TestCase
+// {
+// 	// TODO
+// }
