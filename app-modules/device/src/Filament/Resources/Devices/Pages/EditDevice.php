@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Devices\Pages;
+namespace Helpz\Device\Filament\Resources\Devices\Pages;
 
-use App\Filament\Resources\Devices\DeviceResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
+use Helpz\Device\Filament\Resources\Devices\DeviceResource;
 
 class EditDevice extends EditRecord
 {

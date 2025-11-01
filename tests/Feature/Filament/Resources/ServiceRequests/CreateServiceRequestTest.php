@@ -2,9 +2,9 @@
 
 use App\Enums\ServiceRequestStatusType;
 use App\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
-use App\Models\Device;
 use App\Models\ServiceRequest;
 use App\Models\User;
+use Helpz\Device\Models\Device;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;

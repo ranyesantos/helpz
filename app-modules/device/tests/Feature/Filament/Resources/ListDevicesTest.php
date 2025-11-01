@@ -1,11 +1,11 @@
 <?php
 
 use App\Enums\UserRolesType;
-use App\Filament\Resources\Devices\Pages\ListDevices;
-use App\Models\Device;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
 use Filament\Actions\Testing\TestAction;
+use Helpz\Device\Filament\Resources\Devices\Pages\ListDevices;
+use Helpz\Device\Models\Device;
 use Illuminate\Http\Response;
 use Spatie\Permission\Models\Role;
 

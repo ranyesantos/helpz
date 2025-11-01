@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Helpz\Device\Database\Factories;
 
 use Helpz\Device\Models\Device;
 use Illuminate\Database\Eloquent\Factories\Factory;

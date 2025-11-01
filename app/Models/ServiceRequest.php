@@ -5,8 +5,8 @@ namespace App\Models;
 use App\Enums\ServiceRequestStatusType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Device;
 use App\Models\User;
+use Helpz\Device\Models\Device;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 

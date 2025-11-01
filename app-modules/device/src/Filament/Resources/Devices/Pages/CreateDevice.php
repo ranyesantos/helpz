@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\Devices\Pages;
+namespace Helpz\Device\Filament\Resources\Devices\Pages;
 
-use App\Filament\Resources\Devices\DeviceResource;
 use Filament\Resources\Pages\CreateRecord;
+use Helpz\Device\Filament\Resources\Devices\DeviceResource;
 
 class CreateDevice extends CreateRecord
 {

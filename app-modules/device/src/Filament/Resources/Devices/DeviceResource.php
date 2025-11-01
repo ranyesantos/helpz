@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Filament\Resources\Devices;
+namespace Helpz\Device\Filament\Resources\Devices;
 
-use App\Filament\Resources\Devices\Pages\CreateDevice;
-use App\Filament\Resources\Devices\Pages\EditDevice;
-use App\Filament\Resources\Devices\Pages\ListDevices;
-use App\Filament\Resources\Devices\Pages\ViewDevice;
-use App\Filament\Resources\Devices\Schemas\DeviceForm;
 use App\Filament\Resources\Devices\Tables\DevicesTable;
-use App\Models\Device;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Helpz\Device\Filament\Resources\Devices\Pages\CreateDevice;
+use Helpz\Device\Filament\Resources\Devices\Pages\EditDevice;
+use Helpz\Device\Filament\Resources\Devices\Pages\ListDevices;
+use Helpz\Device\Filament\Resources\Devices\Pages\ViewDevice;
+use Helpz\Device\Filament\Resources\Devices\Schemas\DeviceForm;
+use Helpz\Device\Filament\Resources\Devices\Tables\DevicesTable as TablesDevicesTable;
+use Helpz\Device\Models\Device;
 
 class DeviceResource extends Resource
 {
@@ -28,7 +29,7 @@ class DeviceResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return DevicesTable::configure($table);
+        return TablesDevicesTable::configure($table);
     }
 
     public static function getRelations(): array
