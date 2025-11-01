@@ -3,7 +3,6 @@
 use App\Enums\ServiceRequestStatusType;
 use App\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
 use App\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
-use App\Models\Device;
 use App\Models\ServiceRequest;
 use App\Models\User;
 use Filament\Actions\DeleteAction;
