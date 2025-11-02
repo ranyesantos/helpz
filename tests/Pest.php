@@ -18,7 +18,7 @@ pest()->group('feature')->in('Feature');
 pest()->group('unit')->in('Unit');
 pest()->extend(TestCase::class)
     ->use(RefreshDatabase::class)
-    ->in('Feature', 'Unit');
+    ->in('Feature', 'Unit', '../app-modules/*/tests');
 
 
 /*

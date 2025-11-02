@@ -1,0 +1,24 @@
+{
+	"name": "helpz/service-request",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Helpz\\ServiceRequest\\": "src/",
+			"Helpz\\ServiceRequest\\Tests\\": "tests/",
+			"Helpz\\ServiceRequest\\Database\\Factories\\": "database/factories/",
+			"Helpz\\ServiceRequest\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Helpz\\ServiceRequest\\Providers\\ServiceRequestServiceProvider"
+			]
+		}
+	}
+}

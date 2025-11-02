@@ -3,11 +3,18 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
         "filament/filament": "~4.0",
+        "helpz/device": "*",
+        "helpz/service-request": "*",
+        "helpz/user": "*",
+        "internachi/modular": "^2.3",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "prism-php/prism": "^0.97.0",
@@ -79,5 +86,14 @@
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "beta"
+    "minimum-stability": "beta",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "app-modules/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
 }
