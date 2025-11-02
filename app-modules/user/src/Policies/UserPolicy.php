@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace Helpz\User\Policies;
 
 use Helpz\User\Models\User;
 
