@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d16030125829d7e8bb8d6bf7670ee1ae",
+    "content-hash": "4447d6189f73775ec83d622d8cff7b39",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2648,6 +2648,38 @@
                     "Helpz\\ServiceRequest\\Tests\\": "tests/",
                     "Helpz\\ServiceRequest\\Database\\Factories\\": "database/factories/",
                     "Helpz\\ServiceRequest\\Database\\Seeders\\": "database/seeders/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "helpz/user",
+            "version": "1.0",
+            "dist": {
+                "type": "path",
+                "url": "app-modules/user",
+                "reference": "4c4bf06afda5efb463affcf0de11113a85d91f99"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Helpz\\User\\Providers\\UserServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helpz\\User\\": "src/",
+                    "Helpz\\User\\Tests\\": "tests/",
+                    "Helpz\\User\\Database\\Factories\\": "database/factories/",
+                    "Helpz\\User\\Database\\Seeders\\": "database/seeders/"
                 }
             },
             "license": [

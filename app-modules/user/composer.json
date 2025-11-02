@@ -1,0 +1,24 @@
+{
+	"name": "helpz/user",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Helpz\\User\\": "src/",
+			"Helpz\\User\\Tests\\": "tests/",
+			"Helpz\\User\\Database\\Factories\\": "database/factories/",
+			"Helpz\\User\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Helpz\\User\\Providers\\UserServiceProvider"
+			]
+		}
+	}
+}
