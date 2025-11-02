@@ -11,7 +11,7 @@ class ServiceRequestServiceProvider extends ServiceProvider
 	public function register(): void
 	{
 		Panel::configureUsing(fn (Panel $panel) => 
-			($panel->getId() !== 'admin') || $panel->plugin(new ServiceRequestPanelPlugin())
+			$panel->plugin(new ServiceRequestPanelPlugin())
 		);
 	}
 	

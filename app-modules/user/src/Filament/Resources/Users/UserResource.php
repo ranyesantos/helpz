@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\Users;
+namespace Helpz\User\Filament\Resources\Users;
 
-use App\Filament\Resources\Users\Pages\CreateUser;
-use App\Filament\Resources\Users\Pages\EditUser;
-use App\Filament\Resources\Users\Pages\ListUsers;
-use App\Filament\Resources\Users\RelationManagers\ServiceRequestsRelationManager;
-use App\Filament\Resources\Users\Schemas\UserForm;
-use App\Filament\Resources\Users\Tables\UsersTable;
-use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use Illuminate\Support\Facades\Auth;
+use Helpz\User\Filament\Resources\Users\Pages\CreateUser;
+use Helpz\User\Filament\Resources\Users\Pages\EditUser;
+use Helpz\User\Filament\Resources\Users\Pages\ListUsers;
+use Helpz\User\Filament\Resources\Users\RelationManagers\ServiceRequestsRelationManager;
+use Helpz\User\Filament\Resources\Users\Schemas\UserForm;
+use Helpz\User\Filament\Resources\Users\Tables\UsersTable;
+use Helpz\User\Models\User;
 
 class UserResource extends Resource
 {

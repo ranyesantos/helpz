@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Enums\UserRolesType;
-use App\Models\User;
 use Helpz\Device\Models\Device;
 use Helpz\ServiceRequest\Models\ServiceRequest;
+use Helpz\User\Enums\UserRolesType;
+use Helpz\User\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;

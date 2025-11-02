@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Policies;
+namespace Helpz\User\Policies;
 
-use App\Models\User;
+use Helpz\User\Models\User;
 
 class UserPolicy
 {
