@@ -1,8 +1,8 @@
 <?php
 
-namespace Helpz\User\Tests;
+// namespace Helpz\User\Tests;
 
-class UserServiceProviderTest extends TestCase
-{
-	// TODO
-}
+// class UserServiceProviderTest extends TestCase
+// {
+// 	// TODO
+// }

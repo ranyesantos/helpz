@@ -1,11 +1,11 @@
 <?php
 
 use Spatie\Permission\Models\Role;
-use App\Models\User;
 use Helpz\Device\Models\Device;
 use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
 use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
 use Helpz\ServiceRequest\Models\ServiceRequest;
+use Helpz\User\Models\User;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertDatabaseCount;

@@ -2,9 +2,9 @@
 
 namespace Helpz\ServiceRequest\Database\Factories;
 
-use App\Models\User;
 use Helpz\Device\Models\Device;
 use Helpz\ServiceRequest\Models\ServiceRequest;
+use Helpz\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Collection;
 

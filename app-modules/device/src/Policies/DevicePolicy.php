@@ -2,8 +2,8 @@
 
 namespace Helpz\Device\Policies;
 
-use App\Models\User;
 use Helpz\Device\Models\Device;
+use Helpz\User\Models\User;
 
 class DevicePolicy
 {

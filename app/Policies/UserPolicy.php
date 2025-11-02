@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\User;
+use Helpz\User\Models\User;
 
 class UserPolicy
 {
