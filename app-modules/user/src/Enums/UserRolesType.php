@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums;
+namespace Helpz\User\Enums;
 
 enum UserRolesType : string
 {
