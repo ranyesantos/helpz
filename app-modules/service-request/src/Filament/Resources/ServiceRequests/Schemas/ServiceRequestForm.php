@@ -9,7 +9,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Schema;
 use Helpz\Device\Models\Device;
-use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Illuminate\Support\Facades\Auth;
 
 class ServiceRequestForm
@@ -45,8 +45,8 @@ class ServiceRequestForm
 
                         Select::make('status')
                             ->label('Status')
-                            ->options(ServiceRequestStatusType::class)
-                            ->default(ServiceRequestStatusType::Pending)
+                            ->options(ServiceRequestStatusEnum::class)
+                            ->default(ServiceRequestStatusEnum::Pending)
                             ->hiddenOn('create')
                     ])->columns(3)
                 ])->columnSpan(2)

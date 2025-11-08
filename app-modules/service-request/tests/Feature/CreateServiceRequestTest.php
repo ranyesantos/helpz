@@ -2,7 +2,7 @@
 
 use Spatie\Permission\Models\Role;
 use Helpz\Device\Models\Device;
-use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages\CreateServiceRequest;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Models\User;
@@ -22,7 +22,7 @@ describe ('service request creation', function() {
             'description' => 'service request description',
             'user_id' => $user->id,
             'device_id' => $device->id,
-            'status' => ServiceRequestStatusType::Pending->value
+            'status' => ServiceRequestStatusEnum::Pending->value
         ];
     
         actingAs($user);
@@ -46,7 +46,7 @@ describe ('service request creation', function() {
             'description' => 'service request description',
             'user_id' => $admin->id,
             'device_id' => $device->id,
-            'status' => ServiceRequestStatusType::Pending->value
+            'status' => ServiceRequestStatusEnum::Pending->value
         ];
         assertTrue($admin->hasRole('admin'));
     

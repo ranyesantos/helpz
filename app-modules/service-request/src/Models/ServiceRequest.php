@@ -5,7 +5,7 @@ namespace Helpz\ServiceRequest\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Helpz\Device\Models\Device;
-use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Helpz\User\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -34,7 +34,7 @@ class ServiceRequest extends Model
     protected function casts(): array
     {
         return [
-            'status' => ServiceRequestStatusType::class
+            'status' => ServiceRequestStatusEnum::class
         ];
     }
 }

@@ -19,7 +19,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Helpz\ServiceRequest\Enums\ServiceRequestStatusType;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 
 class ServiceRequestsRelationManager extends RelationManager
 {
@@ -38,7 +38,7 @@ class ServiceRequestsRelationManager extends RelationManager
                     ->relationship('device', 'id')
                     ->required(),
                 Select::make('status')
-                    ->options(ServiceRequestStatusType::class)
+                    ->options(ServiceRequestStatusEnum::class)
                     ->default('pending')
                     ->required(),
             ]);
