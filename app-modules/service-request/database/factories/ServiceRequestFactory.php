@@ -3,6 +3,7 @@
 namespace Helpz\ServiceRequest\Database\Factories;
 
 use Helpz\Device\Models\Device;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -26,31 +27,12 @@ class ServiceRequestFactory extends Factory
             'description' => $this->faker->paragraph(),
             'user_id' => User::factory(),
             'device_id' => Device::factory(),
-            'status' => $this->faker->randomElement(['pending', 'done', 'canceled', 'in_progress']),
+            'status' => $this->faker->randomElement([
+                ServiceRequestStatusEnum::Pending->value, 
+                ServiceRequestStatusEnum::Done->value,
+                ServiceRequestStatusEnum::Canceled->value,
+                ServiceRequestStatusEnum::In_Progress->value
+            ]),
         ];
-    }
-
-    public function generateServiceRequests(Collection $users, Collection $devices): void
-    {
-        for ($i = 0; $i < rand(12, 28); $i++) {
-            ServiceRequest::factory()
-                ->forUser($users->random())
-                ->forDevice($devices->random())
-                ->create();
-        }
-    }
-
-    private function forUser(User $user): self
-    {
-        return $this->state(fn () => [
-            'user_id' => $user->id
-        ]);
-    }
-
-    private function forDevice(Device $device): self
-    {
-        return $this->state(fn () => [
-            'device_id' => $device->id
-        ]);
     }
 }

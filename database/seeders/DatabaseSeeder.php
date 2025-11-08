@@ -75,7 +75,12 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         ServiceRequest::factory()
-            ->generateServiceRequests($users, $devices);
+            ->count(rand(10,27))
+            ->state(fn () => [
+                'user_id' => $users->random()->getKey(),
+                'device_id' => $devices->random()->getKey()
+            ])
+            ->create();
     }
 
 }
