@@ -36,7 +36,7 @@ class DevicePolicy
      */
     public function update(User $user, Device $device): bool
     {
-        return false;
+        return true;
     }
 
     /**

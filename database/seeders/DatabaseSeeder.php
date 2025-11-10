@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Helpz\Device\Models\Device;
+use Helpz\Report\Models\Report;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Enums\UserRolesType;
 use Helpz\User\Models\User;
@@ -80,6 +81,10 @@ class DatabaseSeeder extends Seeder
                 'user_id' => $users->random()->getKey(),
                 'device_id' => $devices->random()->getKey()
             ])
+            ->create();
+
+        Report::factory()
+            ->count(10)
             ->create();
     }
 

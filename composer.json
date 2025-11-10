@@ -13,6 +13,7 @@
         "filament/filament": "~4.0",
         "helpz/ai": "*",
         "helpz/device": "*",
+        "helpz/report": "*",
         "helpz/service-request": "*",
         "helpz/user": "*",
         "internachi/modular": "^2.3",
