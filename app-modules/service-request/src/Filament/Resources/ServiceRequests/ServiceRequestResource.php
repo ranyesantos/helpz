@@ -26,10 +26,10 @@ class ServiceRequestResource extends Resource
     {
         $query = parent::getEloquentQuery();
         
-        /** @var \App\Models\User */
+        /** @var \Helpz\User\Models\User */
         $user = Auth::user(); 
 
-        if ($user->isAdmin()){
+        if ($user->isAdmin() || $user->isTechnician()){
             return $query;
         }
 
