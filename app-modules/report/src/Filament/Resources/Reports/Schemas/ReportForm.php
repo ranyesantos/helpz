@@ -5,7 +5,7 @@ namespace Helpz\Report\Filament\Resources\Reports\Schemas;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
-use Helpz\User\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ReportForm
 {
@@ -19,6 +19,7 @@ class ReportForm
                     ->relationship('user', 'name')
                     ->required()
                     ->searchable()
+                    ->default(Auth::user()->getKey())
                     ->disabled(),
             ]);
     }
