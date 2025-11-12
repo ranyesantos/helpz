@@ -7,26 +7,26 @@ use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 
-class UserRelationManager extends RelationManager
+class ServiceRequestRelationManager extends RelationManager
 {
-    protected static string $relationship = 'user';
+    protected static string $relationship = 'ServiceRequest';
 
     public function form(Schema $schema): Schema
     {
         return $schema
             ->components([
-                TextInput::make('name')
+                TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                TextInput::make('email')
+                TextInput::make('description')
                     ->required()
                     ->maxLength(255),
             ]);
@@ -35,11 +35,14 @@ class UserRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('name')
+            ->recordTitleAttribute('title')
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('email')
+                TextColumn::make('description')
+                    ->limit(50)
+                    ->searchable(),
+                TextColumn::make('device.serial_number')
                     ->searchable(),
             ])
             ->filters([
@@ -49,6 +52,7 @@ class UserRelationManager extends RelationManager
                 CreateAction::make(),
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make(),
             ])
@@ -57,10 +61,5 @@ class UserRelationManager extends RelationManager
                     DeleteBulkAction::make(),
                 ]),
             ]);
-    }
-
-    public static function canViewForRecord(Model $ownerRecord, string $pageClass): bool
-    {
-        return Auth::user()->isTechnician() || Auth::user()->isAdmin();
     }
 }

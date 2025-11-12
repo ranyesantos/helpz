@@ -13,9 +13,9 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use BackedEnum;
-use Helpz\Device\Models\Device;
 use Helpz\Report\Filament\Resources\Reports\Pages\ViewReport;
 use Helpz\Report\Filament\Resources\Reports\RelationManagers\DeviceRelationManager;
+use Helpz\Report\Filament\Resources\Reports\RelationManagers\ServiceRequestRelationManager;
 use Helpz\Report\Filament\Resources\Reports\RelationManagers\UserRelationManager;
 use Helpz\Report\Filament\Resources\Reports\Schemas\ReportInfolist;
 
@@ -45,6 +45,7 @@ class ReportResource extends Resource
     public static function getRelations(): array
     {
         return [
+            ServiceRequestRelationManager::class,
             UserRelationManager::class,
             DeviceRelationManager::class,
         ];
