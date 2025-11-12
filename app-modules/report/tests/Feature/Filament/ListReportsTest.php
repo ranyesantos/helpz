@@ -15,12 +15,10 @@ use function Pest\Livewire\livewire;
 
 describe('when common user is logged-in', function (): void {
     beforeEach(function (): void {
-        $this->commonUser = User::factory()->create();
+        actingAs(User::factory()->create());
     });
 
-    it('return 403 http status code if it attempt to access listing view', function ():void {
-        actingAs($this->commonUser);
-
+    it('return 403 http status code if it attempt to access listing view', function (): void {
         livewire(ListReports::class)
             ->assertStatus(Response::HTTP_FORBIDDEN);
     });
