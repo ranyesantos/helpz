@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Helpz\Device\Models\Device;
 use Helpz\Report\Models\Report;
 use Helpz\ServiceRequest\Models\ServiceRequest;
-use Helpz\User\Enums\UserRolesType;
+use Helpz\User\Enums\UserRolesEnum;
 use Helpz\User\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $role = Role::create(['name' => UserRolesType::Admin]);
+        $adminRole = Role::create(['name' => UserRolesEnum::Admin]);
+        
+        $adminRole->givePermissionTo(Permission::all());
 
         $actions = ['create', 'read', 'update', 'delete'];
         $entities = ['service requests', 'devices', 'reports'];
@@ -29,7 +31,7 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        $technicianRole = Role::create(['name' => UserRolesType::Technician]);
+        $technicianRole = Role::create(['name' => UserRolesEnum::Technician]);
         $technicianRole->givePermissionTo([
             'create service requests',
             'read service requests',
@@ -42,7 +44,6 @@ class DatabaseSeeder extends Seeder
             'update reports',
         ]);
         
-        $role->givePermissionTo(Permission::all());
 
         User::factory()
             ->getAdmin()

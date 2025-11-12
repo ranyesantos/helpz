@@ -2,7 +2,7 @@
 
 namespace Helpz\User\Enums;
 
-enum UserRolesType : string
+enum UserRolesEnum : string
 {
     case Admin = 'admin';
     case Technician = 'technician';
