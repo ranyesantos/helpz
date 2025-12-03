@@ -1,11 +1,11 @@
 # Descrição do Projeto
 ## Propósito
-Helpz é uma aplicação para criação, gerenciamento e acompanhamento de chamados técnicos, que irá utilizar inteligência artificial para gerar relatórios, métricas e sugestões com base nos formulários e reports preenchidos pelos técnicos após a conclusão dos chamados.
-O objetivo é otimizar o planejamento da equipe, oferecendo uma visão ampla e contextualizada de todas as operações
+Helpz is an application designed for creating, managing, and tracking technical support tickets. It will use artificial intelligence to generate reports, metrics, and insights based on the forms and reports submitted by technicians after resolving each ticket.
+The goal is to optimize team planning by providing a broad, contextualized view of all operations.
 
-## Tecnologias Utilizadas
+## Technologies Used
 - **Backend:** PHP, Laravel
 - **Admin Dashboard:** Filament
-- **Banco de Dados:** MySQL
-- **Testes Automatizados:** Pest PHP
-- **CI:** GitHub Actions – para execução de testes
+- **Database:** MySQL
+- **Automated Testing:** Pest PHP
+- **CI:** GitHub Actions – for running automated tests

@@ -2,7 +2,7 @@
 
 namespace Helpz\User\Database\Factories;
 
-use Helpz\User\Enums\UserRolesType;
+use Helpz\User\Enums\UserRolesEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -46,14 +46,14 @@ class UserFactory extends Factory
     public function getAdmin(): UserFactory
     {
         return $this->afterCreating(fn ($user) => [
-            $user->assignRole(UserRolesType::Admin)
+            $user->assignRole(UserRolesEnum::Admin)
         ]);
     }
 
     public function getTechnicianRole(): UserFactory
     {
         return $this->afterCreating(fn ($user) => [
-            $user->assignRole(UserRolesType::Technician)
+            $user->assignRole(UserRolesEnum::Technician)
         ]);
     }
 }

@@ -20,6 +20,9 @@ class ReportsTable
                 TextColumn::make('user.name')
                     ->label('Técnico')
                     ->searchable(),
+                TextColumn::make('serviceRequest.title') 
+                    ->label('Chamado')
+                    ->searchable(),
             ])
             ->filters([
                 //
