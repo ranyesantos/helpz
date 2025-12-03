@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
                 'password' => 'password'
             ]);
 
-        User::factory()
+        $technician = User::factory()
             ->getTechnicianRole()
             ->create([
                 'name' => 'technician',
@@ -93,6 +93,13 @@ class DatabaseSeeder extends Seeder
             ->state(fn () => [
                 'user_id' => $technicianUsers->random()->getKey(),
                 'service_request_id' => $devices->random()->getKey(),
+            ])
+            ->create();
+
+        ServiceRequest::factory()
+            ->state(fn() => [
+                'user_id' => $technician->getKey(),
+                'technician_id' => $technician->getKey()
             ])
             ->create();
     }

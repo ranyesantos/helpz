@@ -23,6 +23,10 @@ class ServiceRequestsTable
                     ->label('Aberto por:')
                     ->searchable(),
 
+                TextColumn::make('technician.name')
+                    ->label('Responsável:')
+                    ->searchable(),
+
                 TextColumn::make('device.serial_number')
                     ->label('Dispositivo')
                     ->searchable(),

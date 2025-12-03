@@ -5,8 +5,10 @@ namespace Helpz\User\Models;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Enums\UserRolesEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -24,11 +26,6 @@ class User extends Authenticatable
         'email',
         'password'
     ];
-
-    public function serviceRequests()
-    {
-        return $this->hasMany(ServiceRequest::class);
-    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -54,6 +51,11 @@ class User extends Authenticatable
     public function isTechnician(): bool
     {
         return $this->hasRole(UserRolesEnum::Technician);
+    }
+    
+    public function serviceRequests(): HasMany
+    {
+        return $this->hasMany(ServiceRequest::class);
     }
     
     /**

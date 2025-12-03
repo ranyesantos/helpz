@@ -31,6 +31,11 @@ class ServiceRequest extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function technician(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
     protected function casts(): array
     {
         return [
