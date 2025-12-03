@@ -4,7 +4,7 @@ use Spatie\Permission\Models\Permission;
 use Filament\Actions\Testing\TestAction;
 use Helpz\Device\Filament\Resources\Devices\Pages\ListDevices;
 use Helpz\Device\Models\Device;
-use Helpz\User\Enums\UserRolesType;
+use Helpz\User\Enums\UserRolesEnum;
 use Helpz\User\Models\User;
 use Illuminate\Http\Response;
 use Spatie\Permission\Models\Role;
@@ -14,7 +14,7 @@ use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Livewire\livewire;
 
 beforeEach(function (): void {
-    $role = Role::create(['name' => UserRolesType::Admin]);
+    $role = Role::create(['name' => UserRolesEnum::Admin]);
     $role->givePermissionTo(Permission::all());
     $this->devices = Device::factory()->count(10)->create();
     $this->admin = User::factory()->getAdmin()->create();

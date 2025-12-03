@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Helpz\Device\Models\Device;
+use Helpz\Report\Models\Report;
 use Helpz\ServiceRequest\Models\ServiceRequest;
-use Helpz\User\Enums\UserRolesType;
+use Helpz\User\Enums\UserRolesEnum;
 use Helpz\User\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
@@ -17,7 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $role = Role::create(['name' => UserRolesType::Admin]);
+        $adminRole = Role::create(['name' => UserRolesEnum::Admin]);
+
+        $adminRole->givePermissionTo(Permission::all());
 
         $actions = ['create', 'read', 'update', 'delete'];
         $entities = ['service requests', 'devices', 'reports'];
@@ -28,7 +31,7 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        $technicianRole = Role::create(['name' => UserRolesType::Technician]);
+        $technicianRole = Role::create(['name' => UserRolesEnum::Technician]);
         $technicianRole->givePermissionTo([
             'create service requests',
             'read service requests',
@@ -40,8 +43,6 @@ class DatabaseSeeder extends Seeder
             'read reports',
             'update reports',
         ]);
-        
-        $role->givePermissionTo(Permission::all());
 
         User::factory()
             ->getAdmin()
@@ -50,7 +51,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'admin@admin.com',
                 'password' => 'password'
             ]);
-            
+
         User::factory()
             ->create([
                 'name' => 'user',
@@ -66,6 +67,11 @@ class DatabaseSeeder extends Seeder
                 'password' => 'password'
             ]);
 
+        $technicianUsers = User::factory()
+            ->getTechnicianRole()
+            ->count(5)
+            ->create();
+
         $users = User::factory()
             ->count(15)
             ->create();
@@ -75,10 +81,18 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         ServiceRequest::factory()
-            ->count(rand(10,27))
+            ->count(rand(24,27))
             ->state(fn () => [
                 'user_id' => $users->random()->getKey(),
                 'device_id' => $devices->random()->getKey()
+            ])
+            ->create();
+
+        Report::factory()
+            ->count(rand(10,12))
+            ->state(fn () => [
+                'user_id' => $technicianUsers->random()->getKey(),
+                'service_request_id' => $devices->random()->getKey(),
             ])
             ->create();
     }

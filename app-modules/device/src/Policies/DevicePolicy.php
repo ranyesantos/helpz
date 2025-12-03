@@ -12,7 +12,7 @@ class DevicePolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->isAdmin();
+        return $user->isAdmin() || $user->isTechnician();
     }
 
     /**
@@ -28,7 +28,7 @@ class DevicePolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->isAdmin() || $user->isTechnician();
     }
 
     /**
@@ -36,7 +36,7 @@ class DevicePolicy
      */
     public function update(User $user, Device $device): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -52,7 +52,7 @@ class DevicePolicy
      */
     public function restore(User $user, Device $device): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -60,6 +60,6 @@ class DevicePolicy
      */
     public function forceDelete(User $user, Device $device): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Helpz\Device\Filament\Resources\Devices;
 
-use App\Filament\Resources\Devices\Tables\DevicesTable;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -13,7 +12,7 @@ use Helpz\Device\Filament\Resources\Devices\Pages\EditDevice;
 use Helpz\Device\Filament\Resources\Devices\Pages\ListDevices;
 use Helpz\Device\Filament\Resources\Devices\Pages\ViewDevice;
 use Helpz\Device\Filament\Resources\Devices\Schemas\DeviceForm;
-use Helpz\Device\Filament\Resources\Devices\Tables\DevicesTable as TablesDevicesTable;
+use Helpz\Device\Filament\Resources\Devices\Tables\DevicesTable;
 use Helpz\Device\Models\Device;
 
 class DeviceResource extends Resource
@@ -29,7 +28,7 @@ class DeviceResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return TablesDevicesTable::configure($table);
+        return DevicesTable::configure($table);
     }
 
     public static function getRelations(): array
