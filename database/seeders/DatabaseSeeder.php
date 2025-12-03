@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $adminRole = Role::create(['name' => UserRolesEnum::Admin]);
-        
+
         $adminRole->givePermissionTo(Permission::all());
 
         $actions = ['create', 'read', 'update', 'delete'];
@@ -43,7 +43,6 @@ class DatabaseSeeder extends Seeder
             'read reports',
             'update reports',
         ]);
-        
 
         User::factory()
             ->getAdmin()
@@ -52,7 +51,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'admin@admin.com',
                 'password' => 'password'
             ]);
-            
+
         User::factory()
             ->create([
                 'name' => 'user',
@@ -68,6 +67,11 @@ class DatabaseSeeder extends Seeder
                 'password' => 'password'
             ]);
 
+        $technicianUsers = User::factory()
+            ->getTechnicianRole()
+            ->count(5)
+            ->create();
+
         $users = User::factory()
             ->count(15)
             ->create();
@@ -77,7 +81,7 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         ServiceRequest::factory()
-            ->count(rand(10,27))
+            ->count(rand(24,27))
             ->state(fn () => [
                 'user_id' => $users->random()->getKey(),
                 'device_id' => $devices->random()->getKey()
@@ -85,7 +89,11 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         Report::factory()
-            ->count(10)
+            ->count(rand(10,12))
+            ->state(fn () => [
+                'user_id' => $technicianUsers->random()->getKey(),
+                'service_request_id' => $devices->random()->getKey(),
+            ])
             ->create();
     }
 
