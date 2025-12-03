@@ -1,6 +1,8 @@
 <?php
 
+use Helpz\Device\Models\Device;
 use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
+use Helpz\User\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,8 +19,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->longText('description');
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('device_id')->constrained()->onDelete('cascade');
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Device::class);
+            $table->foreignId('technician_id')->nullable()->references('id')->on('users')->onDelete('cascade');
             $table->string('status')->default(ServiceRequestStatusEnum::Pending->value);
         });
     }
