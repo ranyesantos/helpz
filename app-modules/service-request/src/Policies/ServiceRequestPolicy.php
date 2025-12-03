@@ -21,7 +21,7 @@ class ServiceRequestPolicy
      */
     public function view(User $user, ServiceRequest $serviceRequest): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class ServiceRequestPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**

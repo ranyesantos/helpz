@@ -57,14 +57,6 @@ class User extends Authenticatable
     }
 
     /**
-     * @method bool isTechnician()
-     */
-    public function isTechnician(): bool
-    {
-        return $this->hasRole(UserRolesType::Technician);
-    }
-
-    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
