@@ -55,7 +55,7 @@ class User extends Authenticatable
     {
         return $this->hasRole(UserRolesEnum::Technician);
     }
-
+    
     /**
      * Get the attributes that should be cast.
      *
