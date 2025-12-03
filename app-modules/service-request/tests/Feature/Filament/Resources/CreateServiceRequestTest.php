@@ -20,8 +20,8 @@ describe ('service request creation', function() {
         $input = [
             'title' => 'service request title',
             'description' => 'service request description',
-            'user_id' => $user->id,
-            'device_id' => $device->id,
+            'user_id' => $user->getKey(),
+            'device_id' => $device->getKey(),
             'status' => ServiceRequestStatusEnum::Pending->value
         ];
     
@@ -44,8 +44,8 @@ describe ('service request creation', function() {
         $input = [
             'title' => 'service request title',
             'description' => 'service request description',
-            'user_id' => $admin->id,
-            'device_id' => $device->id,
+            'user_id' => $admin->getKey(),
+            'device_id' => $device->getKey(),
             'status' => ServiceRequestStatusEnum::Pending->value
         ];
         assertTrue($admin->hasRole('admin'));
