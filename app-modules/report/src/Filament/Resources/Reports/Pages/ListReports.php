@@ -2,7 +2,6 @@
 
 namespace Helpz\Report\Filament\Resources\Reports\Pages;
 
-use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Helpz\Report\Filament\Resources\Reports\ReportResource;
 
@@ -13,7 +12,7 @@ class ListReports extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            //
         ];
     }
 }

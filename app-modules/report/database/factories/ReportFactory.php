@@ -23,6 +23,7 @@ class ReportFactory extends Factory
         return [
             'description' => fake()->sentence(4,5),
             'user_id' => User::factory()->create()->getKey(),
+            'ai_useful' => fake()->boolean(),
             'service_request_id' => ServiceRequest::factory()->create()->getKey(),
             'device_id' => Device::factory()->create()->getKey(),
             'created_at' => Carbon::now(),

@@ -3,7 +3,7 @@
 namespace Helpz\User\Models;
 
 use Helpz\ServiceRequest\Models\ServiceRequest;
-use Helpz\User\Enums\UserRolesType;
+use Helpz\User\Enums\UserRolesEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -45,7 +45,7 @@ class User extends Authenticatable
      */
     public function isAdmin(): bool
     {
-        return $this->hasRole(UserRolesType::Admin);
+        return $this->hasRole(UserRolesEnum::Admin);
     }
 
     /**
@@ -55,7 +55,7 @@ class User extends Authenticatable
     {
         return $this->hasRole(UserRolesType::Technician);
     }
-
+    
     /**
      * Get the attributes that should be cast.
      *
