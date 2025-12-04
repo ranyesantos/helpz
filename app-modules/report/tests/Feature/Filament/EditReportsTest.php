@@ -36,6 +36,8 @@ describe('when technician user is logged-in', function (): void {
 
 describe('when common user is logged-in', function (): void {
     beforeEach(function (): void {
+        Role::create(['name' => UserRolesEnum::Technician]);
+        
         $this->user = User::factory()
             ->create();
             
@@ -54,6 +56,7 @@ describe('when common user is logged-in', function (): void {
 
 describe('when admin user is logged-in', function (): void {
     beforeEach(function (): void {
+        Role::create(['name' => UserRolesEnum::Technician]);
         Role::create(['name' => UserRolesEnum::Admin]);
         
         $this->admin = User::factory()

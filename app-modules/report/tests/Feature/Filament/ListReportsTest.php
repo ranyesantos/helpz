@@ -26,7 +26,8 @@ describe('when common user is logged-in', function (): void {
 
 describe('when admin user is logged-in', function (): void {
     beforeEach(function (): void {
-        Role::create(['name' => UserRolesEnum::Admin]);
+        Role::create(['name' => UserRolesEnum::Admin->value]);
+        Role::create(['name' => UserRolesEnum::Technician->value]);
 
         $this->reports = Report::factory()
             ->count(10)

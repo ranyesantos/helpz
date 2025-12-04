@@ -1,24 +1,27 @@
 <?php
 
-use Filament\Actions\DeleteAction;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\Testing\TestAction;
 use Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Pages\ListServiceRequests;
-use Spatie\Permission\Models\Role;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Models\User;
+use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
-use function Pest\Laravel\assertDatabaseCount;
-use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
-use function Pest\Laravel\assertModelMissing;
 use function Pest\Livewire\livewire;
-use function PHPUnit\Framework\assertTrue;
 
 beforeEach(function (): void {
+    Role::create(['name' => 'technician']);
     $user = User::factory()->create();
-    $this->userServiceRequests = ServiceRequest::factory()->count(10)->for($user)->create();
+    $technician = User::factory()->getTechnicianRole()->create();
+    
+    $this->userServiceRequests = ServiceRequest::factory()
+                                    ->count(10)
+                                    ->state([
+                                        'user_id' => $user->getKey(),
+                                        'technician_id' => $technician->getKey()
+                                    ])
+                                    ->create();
     
     actingAs($user);
 });
