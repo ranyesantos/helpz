@@ -1,7 +1,7 @@
-# Descrição do Projeto
-## Propósito
-Helpz is an application designed for creating, managing, and tracking technical support tickets. It will use artificial intelligence to generate reports, metrics, and insights based on the forms and reports submitted by technicians after resolving each ticket.
-The goal is to optimize team planning by providing a broad, contextualized view of all operations.
+# Project Description
+An application for creating and managing support tickets, using AI to generate insights and summaries from technician reports
+## Goal
+Using AI to provide a clearer view of operations and improve team planning in an automated way.
 
 ## Technologies Used
 - **Backend:** PHP, Laravel
