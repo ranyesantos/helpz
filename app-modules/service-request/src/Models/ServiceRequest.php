@@ -5,6 +5,7 @@ namespace Helpz\ServiceRequest\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Helpz\Device\Models\Device;
+use Helpz\Report\Models\Report;
 use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Helpz\User\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -34,6 +35,11 @@ class ServiceRequest extends Model
     public function technician(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function report(): BelongsTo
+    {
+        return $this->belongsTo(Report::class);
     }
 
     protected function casts(): array

@@ -71,6 +71,10 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
+        ],
+        "setup": [
+            "composer install",
+            "npm install"
         ]
     },
     "extra": {
