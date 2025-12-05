@@ -37,13 +37,10 @@ class ServiceRequestRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('title')
             ->columns([
-                TextColumn::make('title')
-                    ->searchable(),
+                TextColumn::make('title'),
                 TextColumn::make('description')
-                    ->limit(50)
-                    ->searchable(),
-                TextColumn::make('device.serial_number')
-                    ->searchable(),
+                    ->limit(50),
+                TextColumn::make('device.serial_number'),
             ])
             ->filters([
                 //

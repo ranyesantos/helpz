@@ -53,7 +53,12 @@ class ServiceRequestsTable
                 EditAction::make(),
                 //todo: currently it's looking like a <a> tag, change it to look like a button
                 Action::make('finish')
-                    ->url(fn () => CreateReport::getUrl())
+                    ->url(fn (ServiceRequest $serviceRequest): string => 
+                        CreateReport::getUrl([
+                            'service_request_id' => $serviceRequest->getKey(),
+                            'device_id' => $serviceRequest->device_id,
+                        ])
+                    )
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

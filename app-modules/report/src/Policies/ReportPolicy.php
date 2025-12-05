@@ -36,7 +36,7 @@ class ReportPolicy
      */
     public function update(User $user, Report $report): bool
     {
-        return $user->isAdmin() || $user->isTechnician();
+        return $user->isAdmin();
     }
 
     /**

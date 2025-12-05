@@ -37,10 +37,8 @@ class UserRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                TextColumn::make('name')
-                    ->searchable(),
+                TextColumn::make('name'),
                 TextColumn::make('email')
-                    ->searchable(),
             ])
             ->filters([
                 //

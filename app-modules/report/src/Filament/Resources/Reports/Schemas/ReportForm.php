@@ -2,7 +2,7 @@
 
 namespace Helpz\Report\Filament\Resources\Reports\Schemas;
 
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
@@ -14,13 +14,17 @@ class ReportForm
         return $schema
             ->components([
                 TextInput::make('description')
+                    ->default('ni hao')
                     ->required(),
-                Select::make('user_id')
-                    ->relationship('user', 'name')
+                Hidden::make('user_id')
                     ->required()
-                    ->searchable()
-                    ->default(Auth::user()->getKey())
-                    ->disabled(),
+                    ->default(Auth::id()),
+                Hidden::make('service_request_id')
+                    ->required()
+                    ->default(request()->get('service_request_id')),
+                Hidden::make('device_id')
+                    ->required()
+                    ->default(request()->get('device_id')),
             ]);
     }
 }

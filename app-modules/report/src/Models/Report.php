@@ -14,7 +14,10 @@ class Report extends Model
     use HasFactory;
 
     protected $fillable = [
-        'description'
+        'description',
+        'user_id',
+        'service_request_id',
+        'device_id'
     ];
 
     public function user(): BelongsTo
