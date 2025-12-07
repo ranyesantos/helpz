@@ -3,12 +3,15 @@
 namespace Helpz\Report\Models;
 
 use Helpz\Device\Models\Device;
+use Helpz\Report\Observers\ReportObserver;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Models\User;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[ObservedBy([ReportObserver::class])]
 class Report extends Model
 {
     use HasFactory;
