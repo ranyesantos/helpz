@@ -3,9 +3,9 @@
 namespace Helpz\Ai\Providers;
 
 use Helpz\Ai\Services\AiManager;
-use Helpz\Ai\Services\Providers\GeminiClient;
-use Helpz\Ai\Services\Providers\MistralClient;
-use Helpz\Ai\Services\Providers\XAiClient;
+use Helpz\Ai\Services\Clients\GeminiClient;
+use Helpz\Ai\Services\Clients\MistralClient;
+use Helpz\Ai\Services\Clients\XAiClient;
 use Illuminate\Support\ServiceProvider;
 
 class AiServiceProvider extends ServiceProvider
@@ -15,8 +15,8 @@ class AiServiceProvider extends ServiceProvider
 		$this->app->singleton(AiManager::class, function($app) {
 			return new AiManager([
 				$app->make(MistralClient::class),
+				$app->make(GeminiClient::class),
 				$app->make(XAiClient::class),
-				$app->make(GeminiClient::class)
 			]);
 		});
 	}

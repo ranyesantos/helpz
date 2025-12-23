@@ -3,28 +3,49 @@
 namespace Helpz\Ai\Services;
 
 use Exception;
+use Helpz\Ai\Enums\ClientMethodsEnum;
 use Illuminate\Support\Facades\Log;
+use Prism\Prism\Exceptions\PrismException;
 
 final class AiManager
 {
-    // protected array $providers = [];
-
     public function __construct(
-        /** var AiClientInterface[] */
+        /** @var AiClientInterface[] */
         protected array $providers
     )
     {}
 
-    public function summarize(string $text)
+    private function execute($method, ...$arguments)
     {
         foreach ($this->providers as $provider) {
             try {
-                return $provider->summarize($text);
-            } catch (\Throwable $e) {
-                Log::warning('AI provider failed', ['error' => $e->getMessage()]);
+                return $provider->{$method}(...$arguments);
+            } catch (PrismException $e) {
+                Log::error('AI provider failed', [
+                    'error' => $e->getMessage(),
+                    'provider' => $provider,
+                    'method' => $method
+                ]);
             }
         }
+        
+        Log::error('All AI providers failed to summarize the text', ['error' => $e->getMessage()]);
+        throw new Exception('All AI providers failed to summarize the text');
+    }
 
-        throw new \Exception('All AI providers failed to summarize the text');
+    public function analyzeReportUsefulness(string $reportResume)
+    {
+        return $this->execute(
+            ClientMethodsEnum::ANALYZE_REPORT_USEFULNESS->value,
+            $reportResume
+        );
+    }
+
+    public function summarize(string $text)
+    {
+        return $this->execute(
+            ClientMethodsEnum::SUMMARIZE->value, 
+            $text
+        );
     }
 }
