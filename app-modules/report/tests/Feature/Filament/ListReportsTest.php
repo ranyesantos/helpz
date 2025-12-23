@@ -1,6 +1,7 @@
 <?php
 
 use Filament\Actions\Testing\TestAction;
+use Helpz\Report\Events\ReportCreated;
 use Helpz\Report\Filament\Resources\Reports\Pages\ListReports;
 use Helpz\Report\Models\Report;
 use Helpz\User\Enums\UserRolesEnum;
@@ -28,6 +29,9 @@ describe('when admin user is logged-in', function (): void {
     beforeEach(function (): void {
         Role::create(['name' => UserRolesEnum::Admin->value]);
         Role::create(['name' => UserRolesEnum::Technician->value]);
+         Event::fake([
+            ReportCreated::class,
+        ]);
 
         $this->reports = Report::factory()
             ->count(10)
@@ -55,6 +59,10 @@ describe('when technician user is logged-in', function (): void {
     beforeEach(function (): void {
         Role::create(['name' => UserRolesEnum::Technician]);
         
+        Event::fake([
+            ReportCreated::class,
+        ]);
+
         $this->reports = Report::factory()
             ->count(10)
             ->create();
