@@ -19,6 +19,7 @@ class Report extends Model
     protected $fillable = [
         'description',
         'user_id',
+        'ai_useful',
         'service_request_id',
         'device_id'
     ];
