@@ -1,8 +1,8 @@
 <?php
 
-namespace Helpz\Ai\Services\Clients;
+namespace Helpz\AiIntegration\Services\Clients;
 
-use Helpz\Ai\Services\Clients\Contracts\AiClientInterface;
+use Helpz\AiIntegration\Services\Clients\Contracts\AiClientInterface;
 use Illuminate\Support\Facades\Log;
 
 class XAiClient implements AiClientInterface

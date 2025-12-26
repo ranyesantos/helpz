@@ -5,6 +5,6 @@ return [
     App\Providers\Filament\AdminPanelProvider::class,
     App\Providers\TelescopeServiceProvider::class,
     Laravel\Telescope\TelescopeServiceProvider::class,
-    Helpz\Ai\Providers\AiServiceProvider::class,
+    Helpz\AiIntegration\Providers\AiServiceProvider::class,
     Spatie\Permission\PermissionServiceProvider::class,
 ];

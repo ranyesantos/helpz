@@ -1,9 +1,9 @@
 <?php
 
-use Helpz\Ai\Enums\AiClientsEnum;
-use Helpz\Ai\Enums\ClientMethodsEnum;
-use Helpz\Ai\Services\AiManager;
-use Helpz\Ai\Services\Clients\Contracts\AiClientInterface;
+use Helpz\AiIntegration\Enums\AiClientsEnum;
+use Helpz\AiIntegration\Enums\ClientMethodsEnum;
+use Helpz\AiIntegration\Services\AiManager;
+use Helpz\AiIntegration\Services\Clients\Contracts\AiClientInterface;
 use Illuminate\Support\Facades\Log;
 use Prism\Prism\Exceptions\PrismException;
 

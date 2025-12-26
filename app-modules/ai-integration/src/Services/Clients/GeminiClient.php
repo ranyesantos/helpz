@@ -1,9 +1,9 @@
 <?php
 
-namespace Helpz\Ai\Services\Clients;
+namespace Helpz\AiIntegration\Services\Clients;
 
-use Helpz\Ai\Services\Clients\Contracts\AiClientInterface;
-use Helpz\Ai\Shared\ClientAIProfile\AnalyzeReportUsefulnessProfile;
+use Helpz\AiIntegration\Services\Clients\Contracts\AiClientInterface;
+use Helpz\AiIntegration\Shared\ClientAIProfile\AnalyzeReportUsefulnessProfile;
 use Illuminate\Support\Facades\Log;
 use Prism\Prism\Enums\Provider;
 use Prism\Prism\Facades\Prism;

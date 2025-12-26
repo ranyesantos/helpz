@@ -1,6 +1,6 @@
 <?php
 
-namespace Helpz\Ai\Shared\ClientAIProfile;
+namespace Helpz\AiIntegration\Shared\ClientAIProfile;
 
 use Prism\Prism\Schema\BooleanSchema;
 use Prism\Prism\Schema\ObjectSchema;

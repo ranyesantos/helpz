@@ -1,6 +1,6 @@
 <?php
 
-namespace Helpz\Ai\Services\Clients\Contracts;
+namespace Helpz\AiIntegration\Services\Clients\Contracts;
 
 interface AiClientInterface
 {

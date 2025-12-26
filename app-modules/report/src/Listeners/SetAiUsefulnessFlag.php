@@ -2,12 +2,11 @@
 
 namespace Helpz\Report\Listeners;
 
-use Helpz\Ai\Services\AiManager;
+use Helpz\AiIntegration\Services\AiManager;
 use Helpz\Report\Events\ReportCreated;
 use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class SetAiUsefulnessFlag implements ShouldQueue
 {
@@ -24,6 +23,10 @@ class SetAiUsefulnessFlag implements ShouldQueue
     public function handle(ReportCreated $event): void
     {
         $report = $event->report;
+        
+        if ($report->ai_useful !== null) {
+            return;
+        }
 
         $response = $this->aiManager->analyzeReportUsefulness($report->description);
 

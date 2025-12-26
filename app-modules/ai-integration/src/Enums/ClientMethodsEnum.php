@@ -1,6 +1,6 @@
 <?php
 
-namespace Helpz\Ai\Enums;
+namespace Helpz\AiIntegration\Enums;
 
 enum ClientMethodsEnum: string
 {

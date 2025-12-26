@@ -1,11 +1,11 @@
 <?php
 
-namespace Helpz\Ai\Providers;
+namespace Helpz\AiIntegration\Providers;
 
-use Helpz\Ai\Services\AiManager;
-use Helpz\Ai\Services\Clients\GeminiClient;
-use Helpz\Ai\Services\Clients\MistralClient;
-use Helpz\Ai\Services\Clients\XAiClient;
+use Helpz\AiIntegration\Services\AiManager;
+use Helpz\AiIntegration\Services\Clients\GeminiClient;
+use Helpz\AiIntegration\Services\Clients\MistralClient;
+use Helpz\AiIntegration\Services\Clients\XAiClient;
 use Illuminate\Support\ServiceProvider;
 
 class AiServiceProvider extends ServiceProvider
