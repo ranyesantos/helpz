@@ -2,6 +2,7 @@
 
 namespace Helpz\AiIntegration\Services\Clients;
 
+use Helpz\AiIntegration\Enums\AiClientsEnum;
 use Helpz\AiIntegration\Services\Clients\Contracts\AiClientInterface;
 use Helpz\AiIntegration\Shared\ClientAIProfile\AnalyzeReportUsefulnessProfile;
 use Illuminate\Support\Facades\Log;
@@ -30,6 +31,9 @@ class GeminiClient implements AiClientInterface
             'response' => $response->structured,
         ]);
 
-        return $response->structured;
+        return [
+            'data' => $response->structured,
+            'generated_by' => AiClientsEnum::GEMINI->value
+        ];
     }
 }

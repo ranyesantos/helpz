@@ -2,6 +2,7 @@
 
 namespace Helpz\AiIntegration\Services\Clients;
 
+use Helpz\AiIntegration\Enums\AiClientsEnum;
 use Helpz\AiIntegration\Services\Clients\Contracts\AiClientInterface;
 use Helpz\AiIntegration\Shared\ClientAIProfile\AnalyzeReportUsefulnessProfile;
 use Illuminate\Support\Facades\Log;
@@ -24,13 +25,16 @@ class MistralClient implements AiClientInterface
             ->withSchema($this->AIprofile->getSchema())
             ->withPrompt($this->AIprofile->getTestUselessPrompt())
             ->asStructured();
-            
+
         Log::info('response Mistral Client', [
             'method' => 'analyzeReportUsefulness',
             'response' => $response,
             'text' => $response->structured
         ]);
 
-        return $response->structured;
+        return [
+            'data' => $response->structured,
+            'generated_by' => AiClientsEnum::Mistral->value
+        ];
     }
 }

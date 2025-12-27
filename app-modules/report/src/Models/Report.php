@@ -21,7 +21,8 @@ class Report extends Model
         'user_id',
         'ai_useful',
         'service_request_id',
-        'device_id'
+        'device_id',
+        'generated_by'
     ];
 
     public function user(): BelongsTo

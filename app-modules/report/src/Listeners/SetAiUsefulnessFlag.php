@@ -8,7 +8,7 @@ use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\DB;
 
-class SetAiUsefulnessFlag implements ShouldQueue
+class SetAiUsefulnessFlag
 {
     /**
      * Class constructor.
@@ -32,7 +32,9 @@ class SetAiUsefulnessFlag implements ShouldQueue
 
         DB::transaction(function () use ($report, $response){
             $report->update([
-                'ai_useful' => $response['is_useful']
+                'ai_useful' => $response['data']['is_useful'],
+                'description' => $response['data']['reason'],
+                'generated_by' => $response['generated_by']
             ]);
 
             $report->serviceRequest()->update([
