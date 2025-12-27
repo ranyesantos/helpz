@@ -2,7 +2,7 @@
 
 namespace Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Tables;
 
-
+use Filament\Actions\Action;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Filters\Filter;
 use Filament\Actions\BulkActionGroup;
@@ -12,6 +12,8 @@ use Filament\Support\Enums\TextSize;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Helpz\Report\Filament\Resources\Reports\Pages\CreateReport;
+use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Models\User;
 
 class ServiceRequestsTable
@@ -49,6 +51,14 @@ class ServiceRequestsTable
             ])
             ->recordActions([
                 EditAction::make(),
+                //todo: currently it's looking like a <a> tag, change it to look like a button
+                Action::make('finish')
+                    ->url(fn (ServiceRequest $serviceRequest): string => 
+                        CreateReport::getUrl([
+                            'service_request_id' => $serviceRequest->getKey(),
+                            'device_id' => $serviceRequest->device_id,
+                        ])
+                    )
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

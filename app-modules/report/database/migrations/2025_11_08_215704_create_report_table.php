@@ -19,6 +19,7 @@ return new class extends Migration
             $table->longText('description');
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(ServiceRequest::class);
+            $table->string('generated_by')->nullable();
             $table->boolean('ai_useful')->nullable();
             $table->foreignIdFor(Device::class);
             $table->timestamps();

@@ -25,7 +25,7 @@ class ReportResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'title';
+    protected static ?string $recordTitleAttribute = 'description';
 
     public static function form(Schema $schema): Schema
     {
@@ -55,8 +55,9 @@ class ReportResource extends Resource
     {
         return [
             'index' => ListReports::route('/'),
+            'create' => CreateReport::route('/create'),
             'view' => ViewReport::route('/{record}'),
-            'edit' => EditReport::route('/{record}/edit'),
+            'edit' => EditReport::route('/{record}/edit')
         ];
     }
 }

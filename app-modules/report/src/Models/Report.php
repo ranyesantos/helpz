@@ -3,18 +3,26 @@
 namespace Helpz\Report\Models;
 
 use Helpz\Device\Models\Device;
+use Helpz\Report\Observers\ReportObserver;
 use Helpz\ServiceRequest\Models\ServiceRequest;
 use Helpz\User\Models\User;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[ObservedBy([ReportObserver::class])]
 class Report extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'description'
+        'description',
+        'user_id',
+        'ai_useful',
+        'service_request_id',
+        'device_id',
+        'generated_by'
     ];
 
     public function user(): BelongsTo
