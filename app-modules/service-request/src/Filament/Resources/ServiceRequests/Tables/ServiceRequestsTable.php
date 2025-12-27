@@ -3,6 +3,7 @@
 namespace Helpz\ServiceRequest\Filament\Resources\ServiceRequests\Tables;
 
 use Filament\Actions\Action;
+use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Filters\Filter;
 use Filament\Actions\BulkActionGroup;
@@ -53,11 +54,14 @@ class ServiceRequestsTable
                 EditAction::make(),
                 //todo: currently it's looking like a <a> tag, change it to look like a button
                 Action::make('finish')
+                    ->hidden(fn(ServiceRequest $serviceRequest): bool =>
+                        $serviceRequest->status->value === ServiceRequestStatusEnum::Done->value
+                    )
                     ->url(fn (ServiceRequest $serviceRequest): string => 
                         CreateReport::getUrl([
                             'service_request_id' => $serviceRequest->getKey(),
                             'device_id' => $serviceRequest->device_id,
-                        ])
+                        ]) 
                     )
             ])
             ->toolbarActions([
