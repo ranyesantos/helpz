@@ -8,7 +8,7 @@ use Helpz\ServiceRequest\Enums\ServiceRequestStatusEnum;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\DB;
 
-class SetAiUsefulnessFlag
+class SetAiUsefulnessFlag implements ShouldQueue
 {
     /**
      * Class constructor.
